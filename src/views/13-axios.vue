@@ -28,7 +28,12 @@ function addProduct(){
 }
 
 function updateProduct(){
-    
+    const data={
+        "id" : 1,
+        "name" :"香蕉特價中",
+        "category":"水果",
+        "price":20
+    }
     axios.put('https://localhost:7193/api/Test/1', data)
     .then(resp=>{
         alert('資料修改成功')
@@ -37,7 +42,11 @@ function updateProduct(){
 }
 
 function deleteProduct(id){
-
+    axios.delete('https://localhost:7193/api/Test/0' + id)
+    .then(resp=>{
+        alert('刪除成功')
+        console.log(resp)
+    })
 }
 
 </script>
@@ -53,4 +62,10 @@ function deleteProduct(id){
     <hr/>
     <h3>post 商品</h3>
     <button @click="addProduct()">新增商品</button>
+
+    <h3>put 更新商品</h3>
+    <button @click="updateProduct()">更新商品</button>
+
+    <h3>delete 刪除商品</h3>
+    <button @click="deleteProduct()">刪除商品</button>
 </template>

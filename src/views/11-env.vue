@@ -7,7 +7,7 @@ appTitle.value = window.appTitle
 
 //env
 const viteAppTitle = ref('')
-import.meta.env.VITE_APP_TITLE
+viteAppTitle.value = import.meta.env.VITE_APP_TITLE 
 
 //全域屬性
 import { getCurrentInstance } from 'vue'
